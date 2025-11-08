@@ -150,10 +150,6 @@ Insert TREX1__Scanning_Location__c:
   sf_object: TREX1__Scanning_Location__c
   table: TREX1__Scanning_Location__c
   select_options: {}
-Insert TREX1__Reservable__c:
-  sf_object: TREX1__Reservable__c
-  table: TREX1__Reservable__c
-  select_options: {}
 Insert TREX1__Membership_Category__c:
   sf_object: TREX1__Membership_Category__c
   table: TREX1__Membership_Category__c

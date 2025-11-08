@@ -559,11 +559,6 @@ CREATE TABLE "TREX1__Rental_Contract__c" (
 	"TREX1__Contact__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "TREX1__Reservable__c" (
-	id VARCHAR(255) NOT NULL, 
-	PRIMARY KEY (id)
-);
-INSERT INTO "TREX1__Reservable__c" VALUES('TREX1__Reservable__c-1');
 CREATE TABLE "TREX1__Role__c" (
 	id VARCHAR(255) NOT NULL, 
 	PRIMARY KEY (id)
