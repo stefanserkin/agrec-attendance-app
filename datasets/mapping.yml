@@ -10,7 +10,6 @@ Insert TREX1__Staff__c:
 Insert TREX1__Program__c:
   sf_object: TREX1__Program__c
   fields:
-  - External_ID__c
   - Name
   - TREX1__Auto_Attendance_for_Next_Class__c
   - TREX1__Available_Online__c
