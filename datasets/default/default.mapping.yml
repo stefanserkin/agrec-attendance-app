@@ -95,9 +95,64 @@ Insert TREX1__Session__c:
   - TREX1__Start_Date__c
   - TREX1__Status__c
   select_options: {}
+Insert TREX1__Availability_Profile__c:
+  sf_object: TREX1__Availability_Profile__c
+  table: TREX1__Availability_Profile__c
+  fields:
+  - Name
+  - TREX1__Friday_Hours__c
+  - TREX1__Holiday_Hours__c
+  - TREX1__Monday_Hours__c
+  - TREX1__Saturday_Hours__c
+  - TREX1__Sunday_Hours__c
+  - TREX1__Thursday_Hours__c
+  - TREX1__Tuesday_Hours__c
+  - TREX1__Wednesday_Hours__c
+  select_options: {}
+Insert TREX1__Function__c:
+  sf_object: TREX1__Function__c
+  table: TREX1__Function__c
+  fields:
+  - Name
+  - TREX1__Conditions_Of_Use__c
+  - TREX1__Internal_Notes__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Setup_Notes__c
+  - TREX1__Setup_Time_Required__c
+  - TREX1__Take_Down_Notes__c
+  - TREX1__Tear_Down_Time_Required__c
+  select_options: {}
+Insert TREX1__Equipment__c:
+  sf_object: TREX1__Equipment__c
+  table: TREX1__Equipment__c
+  select_options: {}
+Insert TREX1__Role__c:
+  sf_object: TREX1__Role__c
+  table: TREX1__Role__c
+  select_options: {}
 Insert TREX1__Staff__c:
   sf_object: TREX1__Staff__c
   table: TREX1__Staff__c
+  select_options: {}
+Insert Account:
+  sf_object: Account
+  table: Account
+  fields:
+  - Name
+  select_options: {}
+Insert Contact:
+  sf_object: Contact
+  table: Contact
+  fields:
+  - LastName
+  select_options: {}
+Insert TREX1__Scanning_Location__c:
+  sf_object: TREX1__Scanning_Location__c
+  table: TREX1__Scanning_Location__c
+  select_options: {}
+Insert TREX1__Reservable__c:
+  sf_object: TREX1__Reservable__c
+  table: TREX1__Reservable__c
   select_options: {}
 Insert TREX1__Membership_Category__c:
   sf_object: TREX1__Membership_Category__c
@@ -167,6 +222,38 @@ Insert TREX1__Program__c:
       table:
       - TREX1__Staff__c
       key_field: TREX1__Supervisor__c
+  select_options: {}
+Insert TREX1__Location__c:
+  sf_object: TREX1__Location__c
+  table: TREX1__Location__c
+  fields:
+  - Name
+  - TREX1__Address_City__c
+  - TREX1__Address_Country__c
+  - TREX1__Address_Postal_Code__c
+  - TREX1__Address_State__c
+  - TREX1__Address_Street__c
+  - TREX1__Available_for_Location_Filter_Community__c
+  - TREX1__Available_for_Location_Filter_Front_Desk__c
+  - TREX1__Legacy_Id__c
+  lookups:
+    TREX1__Availability_Profile__c:
+      table:
+      - TREX1__Availability_Profile__c
+      key_field: TREX1__Availability_Profile__c
+  select_options: {}
+Insert TREX1__Rental_Contract__c:
+  sf_object: TREX1__Rental_Contract__c
+  table: TREX1__Rental_Contract__c
+  lookups:
+    TREX1__Account__c:
+      table:
+      - Account
+      key_field: TREX1__Account__c
+    TREX1__Contact__c:
+      table:
+      - Contact
+      key_field: TREX1__Contact__c
   select_options: {}
 Insert TREX1__Membership_Type__c:
   sf_object: TREX1__Membership_Type__c
@@ -271,6 +358,32 @@ Insert TREX1__Course__c:
       - TREX1__Program__c
       key_field: TREX1__Program__c
   select_options: {}
+Insert TREX1__Facility__c:
+  sf_object: TREX1__Facility__c
+  table: TREX1__Facility__c
+  fields:
+  - Name
+  - TREX1__Allow_Overbooking__c
+  - TREX1__Amenities__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Max_Capacity__c
+  - TREX1__Type__c
+  - TREX1__Visible_In_Search__c
+  lookups:
+    TREX1__Location__c:
+      table:
+      - TREX1__Location__c
+      key_field: TREX1__Location__c
+    TREX1__Availability_Profile__c:
+      table:
+      - TREX1__Availability_Profile__c
+      key_field: TREX1__Availability_Profile__c
+    TREX1__Parent_Facility__c:
+      table:
+      - TREX1__Facility__c
+      key_field: TREX1__Parent_Facility__c
+      after: Insert TREX1__Facility__c
+  select_options: {}
 Insert TREX1__Course_Session__c:
   sf_object: TREX1__Course_Session__c
   table: TREX1__Course_Session__c
@@ -337,4 +450,252 @@ Insert TREX1__Course_Session__c:
       table:
       - TREX1__GL_Account__c
       key_field: TREX1__Withdrawal_GL_Account__c
+  select_options: {}
+Insert TREX1__Booking_Contract_Option__c:
+  sf_object: TREX1__Booking_Contract_Option__c
+  table: TREX1__Booking_Contract_Option__c
+  fields:
+  - Name
+  - TREX1__Facility_Function_Combo__c
+  - TREX1__Legacy_Id__c
+  lookups:
+    TREX1__Function__c:
+      table:
+      - TREX1__Function__c
+      key_field: TREX1__Function__c
+    TREX1__Facility__c:
+      table:
+      - TREX1__Facility__c
+      key_field: TREX1__Facility__c
+    TREX1__Product__c:
+      table:
+      - TREX1__Product__c
+      key_field: TREX1__Product__c
+  select_options: {}
+Insert TREX1__Attendance_Group__c:
+  sf_object: TREX1__Attendance_Group__c
+  table: TREX1__Attendance_Group__c
+  lookups:
+    TREX1__Course_Option_for_Attendance_Sheet__c:
+      table:
+      - TREX1__Course_Option__c
+      key_field: TREX1__Course_Option_for_Attendance_Sheet__c
+      after: Insert TREX1__Course_Option__c
+  select_options: {}
+Insert TREX1__Course_Option__c:
+  sf_object: TREX1__Course_Option__c
+  table: TREX1__Course_Option__c
+  fields:
+  - Name
+  - TREX1__Age_Max__c
+  - TREX1__Age_Min__c
+  - TREX1__Age_as_of_date__c
+  - TREX1__Available_Online__c
+  - TREX1__Available__c
+  - TREX1__Capacity__c
+  - TREX1__Code__c
+  - TREX1__Day_of_Week__c
+  - TREX1__Description__c
+  - TREX1__Display_Number_of_Classes__c
+  - TREX1__Early_Register_From_Date__c
+  - TREX1__Early_Register_From_Time__c
+  - TREX1__Early_Register_Online_From_Date__c
+  - TREX1__Early_Register_Online_From_Time__c
+  - TREX1__Early_Register_Online_To_Date__c
+  - TREX1__Early_Register_Online_To_Time__c
+  - TREX1__Early_Register_Online__c
+  - TREX1__Early_Register_To_Date__c
+  - TREX1__Early_Register_To_Time__c
+  - TREX1__Early_Register__c
+  - TREX1__Enable_Automated_Waitlist__c
+  - TREX1__Enable_Calendar_Booking_Download__c
+  - TREX1__Enable_Reservation__c
+  - TREX1__End_Date__c
+  - TREX1__End_Time__c
+  - TREX1__Grade_Range__c
+  - TREX1__Instructor__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Number_of_Classes__c
+  - TREX1__Overbooking_Capacity__c
+  - TREX1__Pending_Active_Total__c
+  - TREX1__Register_From_Date__c
+  - TREX1__Register_From_Time__c
+  - TREX1__Register_Online_From_Date__c
+  - TREX1__Register_Online_From_Time__c
+  - TREX1__Register_Online_To_Date__c
+  - TREX1__Register_Online_To_Time__c
+  - TREX1__Register_To_Date__c
+  - TREX1__Register_To_Time__c
+  - TREX1__Registration_Total__c
+  - TREX1__Setup_Notes__c
+  - TREX1__Setup_Time_Required__c
+  - TREX1__Show_Age_Range__c
+  - TREX1__Show_Capacity_Online__c
+  - TREX1__Show_Cost__c
+  - TREX1__Show_Days__c
+  - TREX1__Show_Grade_Range__c
+  - TREX1__Show_Instructor__c
+  - TREX1__Show_Location__c
+  - TREX1__Show_Time_Window__c
+  - TREX1__Show_Watlist_Capacity__c
+  - TREX1__Special_Instructions__c
+  - TREX1__Start_Date__c
+  - TREX1__Start_Time__c
+  - TREX1__Status__c
+  - TREX1__Tear_Down_Notes__c
+  - TREX1__Tear_Down_Time_Required__c
+  - TREX1__Total_Reserved_Registration__c
+  - TREX1__Transfer_in_within_Program__c
+  - TREX1__Transfer_out_within_Program__c
+  - TREX1__Type__c
+  - TREX1__Unlimited_Capacity__c
+  - TREX1__Unlimited_Overbooking_Capacity__c
+  - TREX1__Unlimited_Waitlist_Capacity__c
+  - TREX1__Unnamed_Group_Reg_Max_Tickets__c
+  - TREX1__Unnamed_Group_Reg_Min_Tickets__c
+  - TREX1__Unnamed_Group_Registration__c
+  - TREX1__Waitlist_Capacity__c
+  - TREX1__Waitlist_Message__c
+  - TREX1__Waitlist_Pending_Confirmation_Total__c
+  - TREX1__Waitlist_Total__c
+  lookups:
+    TREX1__Product__c:
+      table:
+      - TREX1__Product__c
+      key_field: TREX1__Product__c
+    TREX1__Location__c:
+      table:
+      - TREX1__Location__c
+      key_field: TREX1__Location__c
+    TREX1__Attendance_Group__c:
+      table:
+      - TREX1__Attendance_Group__c
+      key_field: TREX1__Attendance_Group__c
+    TREX1__Scanning_Location__c:
+      table:
+      - TREX1__Scanning_Location__c
+      key_field: TREX1__Scanning_Location__c
+  select_options: {}
+Insert TREX1__Course_Session_Option__c:
+  sf_object: TREX1__Course_Session_Option__c
+  table: TREX1__Course_Session_Option__c
+  fields:
+  - TREX1__Available_Online__c
+  - TREX1__Grade_Range__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Option_Available__c
+  - TREX1__Option_Capacity__c
+  - TREX1__Option_Registration_Total__c
+  lookups:
+    TREX1__Course_Option__c:
+      table:
+      - TREX1__Course_Option__c
+      key_field: TREX1__Course_Option__c
+    TREX1__Course_Session__c:
+      table:
+      - TREX1__Course_Session__c
+      key_field: TREX1__Course_Session__c
+  select_options: {}
+Insert TREX1__Booking_Series__c:
+  sf_object: TREX1__Booking_Series__c
+  table: TREX1__Booking_Series__c
+  fields:
+  - Name
+  - TREX1__Conflict_Status__c
+  - TREX1__Day_Number_in_Month__c
+  - TREX1__Day_Start_Number_in_Month__c
+  - TREX1__Days_of_the_Week__c
+  - TREX1__End_Date__c
+  - TREX1__End_Time__c
+  - TREX1__Every_Number_of_Occurances__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Recurrence_Pattern__c
+  - TREX1__Recurrence_Sub_Pattern__c
+  - TREX1__Series_End_After_Number_of_Occurences__c
+  - TREX1__Start_Date__c
+  - TREX1__Start_Time__c
+  - TREX1__Status__c
+  - TREX1__Weekly_Days_Of_The_Week__c
+  lookups:
+    TREX1__Course_Option__c:
+      table:
+      - TREX1__Course_Option__c
+      key_field: TREX1__Course_Option__c
+  select_options: {}
+Insert TREX1__Booking__c:
+  sf_object: TREX1__Booking__c
+  table: TREX1__Booking__c
+  fields:
+  - TREX1__Actual_Attendance__c
+  - TREX1__Conflict_Ids__c
+  - TREX1__Conflict_Status__c
+  - TREX1__Date_Stamp__c
+  - TREX1__Description__c
+  - TREX1__End_Time__c
+  - TREX1__Event_Name__c
+  - TREX1__Expected_Attendance__c
+  - TREX1__External_Notes__c
+  - TREX1__Function_ID__c
+  - TREX1__Function_Name__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Notes__c
+  - TREX1__Number_of_Equipment_Booked__c
+  - TREX1__Originating_Rental_Contract__c
+  - TREX1__Role_ID__c
+  - TREX1__Role_Name__c
+  - TREX1__Setup_Maintenance__c
+  - TREX1__Setup_Notes__c
+  - TREX1__Setup_Time_Required__c
+  - TREX1__Start_Time__c
+  - TREX1__Status__c
+  - TREX1__Sync_Booking_To_Series__c
+  - TREX1__Tear_Down_Maintenance__c
+  - TREX1__Tear_Down_Notes__c
+  - TREX1__Tear_Down_Time_Required__c
+  - TREX1__Type__c
+  - TREX1__Update_Entire_Booking_Series__c
+  - TREX1__Update_Only_Me__c
+  - RecordTypeId
+  lookups:
+    TREX1__Booking_Series__c:
+      table:
+      - TREX1__Booking_Series__c
+      key_field: TREX1__Booking_Series__c
+    TREX1__Facility__c:
+      table:
+      - TREX1__Facility__c
+      key_field: TREX1__Facility__c
+    TREX1__Course_Option__c:
+      table:
+      - TREX1__Course_Option__c
+      key_field: TREX1__Course_Option__c
+    TREX1__Equipment__c:
+      table:
+      - TREX1__Equipment__c
+      key_field: TREX1__Equipment__c
+    TREX1__Parent_Booking__c:
+      table:
+      - TREX1__Booking__c
+      key_field: TREX1__Parent_Booking__c
+      after: Insert TREX1__Booking__c
+    TREX1__Rental_Contract__c:
+      table:
+      - TREX1__Rental_Contract__c
+      key_field: TREX1__Rental_Contract__c
+    TREX1__Set_Function__c:
+      table:
+      - TREX1__Function__c
+      key_field: TREX1__Set_Function__c
+    TREX1__Set_Role__c:
+      table:
+      - TREX1__Role__c
+      key_field: TREX1__Set_Role__c
+    TREX1__Staff__c:
+      table:
+      - TREX1__Staff__c
+      key_field: TREX1__Staff__c
+    TREX1__book_Function__c:
+      table:
+      - TREX1__Function__c
+      key_field: TREX1__book_Function__c
   select_options: {}
