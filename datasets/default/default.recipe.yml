@@ -1,0 +1,32 @@
+- snowfakery_version: 3
+
+# Reusable month boundaries
+- var: first_of_month
+  value: ${{ date(year=today.year, month=today.month, day=1) }}
+- var: last_of_month
+  value: ${{ first_of_month + relativedelta(months=1, days=-1) }}
+
+# Programs
+- object: TREX1__Program__c
+  nickname: Program
+  count: 2
+  fields:
+    Name: ${{ fake.Company + " Program" }}
+
+# Courses (lookup to Program)
+- object: TREX1__Course__c
+  nickname: Course
+  count: 4
+  fields:
+    Name: ${{ fake.CatchPhrase }}
+    TREX1__Program__c:
+      reference: Program
+
+# Sessions (current month dates)
+- object: TREX1__Session__c
+  nickname: Session
+  count: 1
+  fields:
+    Name: ${{ "Session " + first_of_month.strftime("%b %Y") }}
+    TREX1__Start_Date__c: ${{ first_of_month }}
+    TREX1__End_Date__c:   ${{ last_of_month }}

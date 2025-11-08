@@ -1,0 +1,54 @@
+# Editing this file is usually not recommended because it will
+# be overwritten the next time you re-capture this data.
+#
+# You can change this file's contents permanently by creating a
+# .load.yml file and re-capturing:
+#
+#  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
+Insert TREX1__Staff__c:
+  sf_object: TREX1__Staff__c
+  table: TREX1__Staff__c
+  select_options: {}
+Insert TREX1__Program__c:
+  sf_object: TREX1__Program__c
+  table: TREX1__Program__c
+  fields:
+  - Name
+  - TREX1__Auto_Attendance_for_Next_Class__c
+  - TREX1__Available_Online__c
+  - TREX1__Available__c
+  - TREX1__Description__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Online_Bulletin_Enabled__c
+  - TREX1__Online_Bulletin_Text__c
+  - TREX1__Rich_Description__c
+  - TREX1__Staff_Bulletin_Enabled__c
+  - TREX1__Staff_Bulletin_Text__c
+  - TREX1__Supervisor_Email__c
+  - TREX1__Supervisor_Name__c
+  - TREX1__Supervisor_Phone__c
+  - TREX1__Waitlist_Message__c
+  - agrec__External_ID__c
+  lookups:
+    TREX1__Supervisor__c:
+      table:
+      - TREX1__Staff__c
+      key_field: TREX1__Supervisor__c
+  select_options: {}
+Insert TREX1__Course__c:
+  sf_object: TREX1__Course__c
+  table: TREX1__Course__c
+  fields:
+  - Name
+  - TREX1__Available_Online__c
+  - TREX1__Available__c
+  - TREX1__Code__c
+  - TREX1__Description__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Rich_Description__c
+  lookups:
+    TREX1__Program__c:
+      table:
+      - TREX1__Program__c
+      key_field: TREX1__Program__c
+  select_options: {}

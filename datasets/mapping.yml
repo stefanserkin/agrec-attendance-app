@@ -1,45 +1,32 @@
-Insert Accounts:
-    sf_object: Account
-    table: Account
-    fields:
-        Name: Name
-        Description: Description
-        BillingStreet: BillingStreet
-        BillingCity: BillingCity
-        BillingState: BillingState
-        BillingPostalCode: BillingPostalCode
-        BillingCountry: BillingCountry
-        ShippingStreet: ShippingStreet
-        ShippingCity: ShippingCity
-        ShippingState: ShippingState
-        ShippingPostalCode: ShippingPostalCode
-        ShippingCountry: ShippingCountry
-        Phone: Phone
-        Fax: Fax
-        Website: Website
-        NumberOfEmployees: NumberOfEmployees
-        AccountNumber: AccountNumber
-        Site: Site
-        Type: Type
-Insert Contacts:
-    sf_object: Contact
-    table: Contact
-    fields:
-        Salutation: Salutation
-        FirstName: FirstName
-        LastName: LastName
-        Email: Email
-        Phone: Phone
-        MobilePhone: MobilePhone
-        OtherPhone: OtherPhone
-        HomePhone: HomePhone
-        Title: Title
-        Birthdate: Birthdate
-        MailingStreet: MailingStreet
-        MailingCity: MailingCity
-        MailingState: MailingState
-        MailingPostalCode: MailingPostalCode
-        MailingCountry: MailingCountry
-    lookups:
-        AccountId:
-            table: Account
+Insert TREX1__Staff__c:
+  sf_object: TREX1__Staff__c
+  fields:
+  - Name
+  - TREX1__Allow_Overbooking__c
+  - TREX1__Email__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Phone__c
+  - TREX1__Role__c
+Insert TREX1__Program__c:
+  sf_object: TREX1__Program__c
+  fields:
+  - External_ID__c
+  - Name
+  - TREX1__Auto_Attendance_for_Next_Class__c
+  - TREX1__Available_Online__c
+  - TREX1__Available__c
+  - TREX1__Description__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Online_Bulletin_Enabled__c
+  - TREX1__Online_Bulletin_Text__c
+  - TREX1__Rich_Description__c
+  - TREX1__Staff_Bulletin_Enabled__c
+  - TREX1__Staff_Bulletin_Text__c
+  - TREX1__Supervisor_Email__c
+  - TREX1__Supervisor_Name__c
+  - TREX1__Supervisor_Phone__c
+  - TREX1__Waitlist_Message__c
+  lookups:
+    TREX1__Supervisor__c:
+      table:
+      - TREX1__Staff__c

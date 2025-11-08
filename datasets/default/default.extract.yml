@@ -1,0 +1,9 @@
+extract:
+  TREX1__Program__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Course__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Program__c
