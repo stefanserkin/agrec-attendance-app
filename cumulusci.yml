@@ -16,6 +16,17 @@ project:
     source_format: sfdx
 
 tasks:
+    assign_admin_permsets:
+        description: Assigns the admin permset to the running user
+        class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
+        options:
+            apex: >
+                PermissionSet ps = [SELECT Id FROM PermissionSet WHERE Name = 'Traction_Rec_Full_Access' LIMIT 1];
+                insert new PermissionSetAssignment(
+                    PermissionSetId = ps.Id,
+                    AssigneeId = UserInfo.getUserId()
+                );
+
     configure_scratch_user:
         description: Updates the default user to eastern time
         class_path: cumulusci.tasks.apex.anon.AnonymousApexTask
@@ -65,15 +76,19 @@ tasks:
 flows:
     config_dev:
         steps:
-            9:
-                task: deploy_dev_config
             10:
                 task: configure_scratch_user
+            11:
+                task: assign_admin_permsets
+            12:
+                task: deploy_dev_config
 
     config_managed:
         steps:
             10:
                 task: configure_scratch_user
+            11:
+                task: assign_admin_permsets
 
 orgs:
     scratch:

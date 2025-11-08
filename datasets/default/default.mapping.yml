@@ -587,10 +587,10 @@ Insert TREX1__Course_Session_Option__c:
       table:
       - TREX1__Course_Option__c
       key_field: TREX1__Course_Option__c
-    TREX1__Course_Session__c:
+    TREX1__cso_Course_Session__c:
       table:
       - TREX1__Course_Session__c
-      key_field: TREX1__Course_Session__c
+      key_field: TREX1__cso_Course_Session__c
   select_options: {}
 Insert TREX1__Booking_Series__c:
   sf_object: TREX1__Booking_Series__c

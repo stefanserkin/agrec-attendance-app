@@ -86,7 +86,7 @@ extract:
     fields:
       - FIELDS(ALL)
       - TREX1__Course_Option__c
-      - TREX1__Course_Session__c
+      - TREX1__cso_Course_Session__c
 
   TREX1__Booking_Series__c:
     fields:

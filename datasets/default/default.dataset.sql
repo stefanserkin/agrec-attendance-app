@@ -256,7 +256,7 @@ CREATE TABLE "TREX1__Course_Session_Option__c" (
 	"TREX1__Option_Capacity__c" VARCHAR(255), 
 	"TREX1__Option_Registration_Total__c" VARCHAR(255), 
 	"TREX1__Course_Option__c" VARCHAR(255), 
-	"TREX1__Course_Session__c" VARCHAR(255), 
+	"TREX1__cso_Course_Session__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
 INSERT INTO "TREX1__Course_Session_Option__c" VALUES('TREX1__Course_Session_Option__c-1','True','N/A','','True','0.0','0.0','TREX1__Course_Option__c-1','TREX1__Course_Session__c-1');
