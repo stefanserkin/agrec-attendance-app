@@ -7,8 +7,8 @@ project:
         api_version: '63.0'
     dependencies:
         - github: 'https://github.com/stefanserkin/agrec-base-pack'
-        - version_id: 04t1U0000058cL3QAI
-        - version_id: 04t5G000003RUjoQAG
+        - version_id: 04tKi0000000SrWIAU
+        - version_id: 04tHs000001JW9KIAW
     git:
         default_branch: 'main'
     test:
