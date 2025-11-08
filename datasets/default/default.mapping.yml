@@ -28,7 +28,6 @@ Insert TREX1__Program__c:
   - TREX1__Supervisor_Name__c
   - TREX1__Supervisor_Phone__c
   - TREX1__Waitlist_Message__c
-  - agrec__External_ID__c
   lookups:
     TREX1__Supervisor__c:
       table:
