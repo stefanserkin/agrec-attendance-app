@@ -7,3 +7,37 @@ extract:
     fields:
       - FIELDS(ALL)
       - TREX1__Program__c
+
+  TREX1__Session__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Course_Session__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Course__c
+      - TREX1__Course_Session__c
+      - TREX1__Product__c
+
+  TREX1__GL_Account__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Global_Billing_Group__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Product__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Global_Billing_Group__c
+
+  TREX1__Price_Level__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Product__c
+      - TREX1__GL_Account_Deposit_Fee_Primary__c
+      - TREX1__GL_Account_Initial_Fee_Primary__c
+      - TREX1__GL_Account_Initial_Fee_Secondary__c
+      - TREX1__GL_Account_Recurring_Fee_Primary__c
+      - TREX1__GL_Account_Recurring_Fee_Secondary__c
