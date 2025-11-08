@@ -1,24 +1,4 @@
 extract:
-  TREX1__Program__c:
-    fields:
-      - FIELDS(ALL)
-
-  TREX1__Course__c:
-    fields:
-      - FIELDS(ALL)
-      - TREX1__Program__c
-
-  TREX1__Session__c:
-    fields:
-      - FIELDS(ALL)
-
-  TREX1__Course_Session__c:
-    fields:
-      - FIELDS(ALL)
-      - TREX1__Course__c
-      - TREX1__Course_Session__c
-      - TREX1__Product__c
-
   TREX1__GL_Account__c:
     fields:
       - FIELDS(ALL)
@@ -41,3 +21,80 @@ extract:
       - TREX1__GL_Account_Initial_Fee_Secondary__c
       - TREX1__GL_Account_Recurring_Fee_Primary__c
       - TREX1__GL_Account_Recurring_Fee_Secondary__c
+
+  TREX1__Program_Category__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Program__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Program_Category_Tag__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Program__c
+      - TREX1__Program_Category__c
+
+  TREX1__Course__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Program__c
+
+  TREX1__Session__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Course_Session__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Course__c
+      - TREX1__Session__c
+      - TREX1__Product__c
+
+  TREX1__Availability_Profile__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Location__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Availability_Profile__c
+
+  TREX1__Facility__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Location__c
+
+  TREX1__Function__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Booking_Contract_Option__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Function__c
+      - TREX1__Facility__c
+
+  TREX1__Course_Option__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Product__c
+      - TREX1__Location__c
+
+  TREX1__Course_Session_Option__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Course_Option__c
+      - TREX1__Course_Session__c
+
+  TREX1__Booking_Series__c:
+    fields:
+      - FIELDS(ALL)
+
+  TREX1__Booking__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Booking_Series__c
+      - TREX1__Facility__c
+      - TREX1__Course_Option__c

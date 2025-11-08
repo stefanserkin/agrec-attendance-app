@@ -5,9 +5,143 @@
 # .load.yml file and re-capturing:
 #
 #  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
+Insert TREX1__GL_Account__c:
+  sf_object: TREX1__GL_Account__c
+  table: TREX1__GL_Account__c
+  fields:
+  - Name
+  - TREX1__Active__c
+  - TREX1__Category__c
+  - TREX1__GL_Account_Number__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Type__c
+  select_options: {}
+Insert TREX1__Global_Billing_Group__c:
+  sf_object: TREX1__Global_Billing_Group__c
+  table: TREX1__Global_Billing_Group__c
+  fields:
+  - Name
+  - TREX1__Community_Bill_To_Account__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Locked_By_Billing_Batch__c
+  - TREX1__Monthly_Billing_Day__c
+  - TREX1__Public_Name__c
+  - TREX1__Summarize_OTBS_On_Payment__c
+  - TREX1__Surcharge_Configuration__c
+  select_options: {}
+Insert TREX1__Program_Category__c:
+  sf_object: TREX1__Program_Category__c
+  table: TREX1__Program_Category__c
+  fields:
+  - Name
+  - TREX1__Allow_Location_Selection__c
+  - TREX1__Allow_Self_Check_In__c
+  - TREX1__Available_Online__c
+  - TREX1__Available__c
+  - TREX1__Check_In_Banner_Background_Color__c
+  - TREX1__Check_In_Brand_Button_Color__c
+  - TREX1__Check_In_By_FOB__c
+  - TREX1__Check_In_By_Name__c
+  - TREX1__Check_In_Enable_Note__c
+  - TREX1__Check_In_Enable_Outstanding_Balance__c
+  - TREX1__Check_In_Enable_Outstanding_Forms__c
+  - TREX1__Check_In_Home_Page_Background_Color__c
+  - TREX1__Check_In_Outline_Brand_Button_Color__c
+  - TREX1__Check_In_Require_Staff_Pin__c
+  - TREX1__Check_In_Requires_Pin__c
+  - TREX1__Check_In_Tile_Name_Background_Color__c
+  - TREX1__Check_In_Tile_Selected_Border_Color__c
+  - TREX1__Description_Rich_Text__c
+  - TREX1__Enable_Image_Capture__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Online_Bulletin_Enabled__c
+  - TREX1__Online_Bulletin_Text__c
+  - TREX1__Print_Receipt_Required__c
+  - TREX1__Show_Early_Check_In_Warning__c
+  - TREX1__Show_Late_Check_Out_Warning__c
+  - TREX1__Staff_Bulletin_Enabled__c
+  - TREX1__Staff_Bulletin_Text__c
+  select_options: {}
+Insert TREX1__Session__c:
+  sf_object: TREX1__Session__c
+  table: TREX1__Session__c
+  fields:
+  - Name
+  - TREX1__Available_Online_From__c
+  - TREX1__Available_Online_To__c
+  - TREX1__Available_Online__c
+  - TREX1__Available__c
+  - TREX1__Early_Register_From_Date__c
+  - TREX1__Early_Register_From_Time__c
+  - TREX1__Early_Register_Online_From_Date__c
+  - TREX1__Early_Register_Online_From_Time__c
+  - TREX1__Early_Register_Online_To_Date__c
+  - TREX1__Early_Register_Online_To_Time__c
+  - TREX1__Early_Register_Online__c
+  - TREX1__Early_Register_To_Date__c
+  - TREX1__Early_Register_To_Time__c
+  - TREX1__Early_Register__c
+  - TREX1__End_Date__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Register_From_Date__c
+  - TREX1__Register_From_Time__c
+  - TREX1__Register_Online_From_Date__c
+  - TREX1__Register_Online_From_Time__c
+  - TREX1__Register_Online_To_Date__c
+  - TREX1__Register_Online_To_Time__c
+  - TREX1__Register_To_Date__c
+  - TREX1__Register_To_Time__c
+  - TREX1__Show_in_Filter__c
+  - TREX1__Start_Date__c
+  - TREX1__Status__c
+  select_options: {}
 Insert TREX1__Staff__c:
   sf_object: TREX1__Staff__c
   table: TREX1__Staff__c
+  select_options: {}
+Insert TREX1__Membership_Category__c:
+  sf_object: TREX1__Membership_Category__c
+  table: TREX1__Membership_Category__c
+  select_options: {}
+Insert TREX1__Tax_Configuration__c:
+  sf_object: TREX1__Tax_Configuration__c
+  table: TREX1__Tax_Configuration__c
+  select_options: {}
+Insert TREX1__Inventory_Group__c:
+  sf_object: TREX1__Inventory_Group__c
+  table: TREX1__Inventory_Group__c
+  select_options: {}
+Insert TREX1__Product__c:
+  sf_object: TREX1__Product__c
+  table: TREX1__Product__c
+  fields:
+  - Name
+  - TREX1__Allow_Multiple__c
+  - TREX1__Available_Externally__c
+  - TREX1__Available_for_Rentals__c
+  - TREX1__Billing_Cancellation_Credit_Setting__c
+  - TREX1__Can_Backdate__c
+  - TREX1__Cancellation_Credit_Setting__c
+  - TREX1__Coupon_Code__c
+  - TREX1__Discount_End_Date_Setting__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Price_Description_Override__c
+  - TREX1__Price_Description__c
+  - TREX1__Require_Stored_Account__c
+  - RecordTypeId
+  lookups:
+    TREX1__Global_Billing_Group__c:
+      table:
+      - TREX1__Global_Billing_Group__c
+      key_field: TREX1__Global_Billing_Group__c
+    TREX1__Inventory_Group__c:
+      table:
+      - TREX1__Inventory_Group__c
+      key_field: TREX1__Inventory_Group__c
+    TREX1__Tax_Configuration__c:
+      table:
+      - TREX1__Tax_Configuration__c
+      key_field: TREX1__Tax_Configuration__c
   select_options: {}
 Insert TREX1__Program__c:
   sf_object: TREX1__Program__c
@@ -34,6 +168,92 @@ Insert TREX1__Program__c:
       - TREX1__Staff__c
       key_field: TREX1__Supervisor__c
   select_options: {}
+Insert TREX1__Membership_Type__c:
+  sf_object: TREX1__Membership_Type__c
+  table: TREX1__Membership_Type__c
+  fields:
+  - TREX1__Cancellation_Policy__c
+  lookups:
+    TREX1__Category__c:
+      table:
+      - TREX1__Membership_Category__c
+      key_field: TREX1__Category__c
+  select_options: {}
+Insert TREX1__Price_Level__c:
+  sf_object: TREX1__Price_Level__c
+  table: TREX1__Price_Level__c
+  fields:
+  - Name
+  - TREX1__Booking_Price__c
+  - TREX1__Commission_Fixed_Amount__c
+  - TREX1__Deposit_Fee_Amount__c
+  - TREX1__Deposit_Fee_Revenue_Recognition_Policy__c
+  - TREX1__GL_Percent_Initial_Fee_Primary__c
+  - TREX1__GL_Percent_Initial_Fee_Secondary__c
+  - TREX1__GL_Percent_Recurring_Fee_Primary__c
+  - TREX1__GL_Percent_Recurring_Fee_Secondary__c
+  - TREX1__Hourly_Rate__c
+  - TREX1__Immediate_Fee_Deferred_Recognition__c
+  - TREX1__Include_Price_In_Public_Description__c
+  - TREX1__Initial_Fee_Amount__c
+  - TREX1__Initial_Fee_Revenue_Recognition_Policy__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Percentage__c
+  - TREX1__Price_Type__c
+  - TREX1__Public_Price_Note__c
+  - TREX1__Recurring_Revenue_Recognition_Policy__c
+  - TREX1__Sequence_Number__c
+  - RecordTypeId
+  lookups:
+    TREX1__Product__c:
+      table:
+      - TREX1__Product__c
+      key_field: TREX1__Product__c
+    TREX1__GL_Account_Deposit_Fee_Primary__c:
+      table:
+      - TREX1__GL_Account__c
+      key_field: TREX1__GL_Account_Deposit_Fee_Primary__c
+    TREX1__GL_Account_Initial_Fee_Primary__c:
+      table:
+      - TREX1__GL_Account__c
+      key_field: TREX1__GL_Account_Initial_Fee_Primary__c
+    TREX1__GL_Account_Initial_Fee_Secondary__c:
+      table:
+      - TREX1__GL_Account__c
+      key_field: TREX1__GL_Account_Initial_Fee_Secondary__c
+    TREX1__GL_Account_Recurring_Fee_Primary__c:
+      table:
+      - TREX1__GL_Account__c
+      key_field: TREX1__GL_Account_Recurring_Fee_Primary__c
+    TREX1__GL_Account_Recurring_Fee_Secondary__c:
+      table:
+      - TREX1__GL_Account__c
+      key_field: TREX1__GL_Account_Recurring_Fee_Secondary__c
+    TREX1__Master_Sequential__c:
+      table:
+      - TREX1__Price_Level__c
+      key_field: TREX1__Master_Sequential__c
+      after: Insert TREX1__Price_Level__c
+    TREX1__Tax_Configuration__c:
+      table:
+      - TREX1__Tax_Configuration__c
+      key_field: TREX1__Tax_Configuration__c
+  select_options: {}
+Insert TREX1__Program_Category_Tag__c:
+  sf_object: TREX1__Program_Category_Tag__c
+  table: TREX1__Program_Category_Tag__c
+  fields:
+  - TREX1__Legacy_Id__c
+  lookups:
+    TREX1__Program__c:
+      table:
+      - TREX1__Program__c
+      key_field: TREX1__Program__c
+    TREX1__Program_Category__c:
+      table:
+      - TREX1__Program_Category__c
+      key_field: TREX1__Program_Category__c
+  select_options: {}
 Insert TREX1__Course__c:
   sf_object: TREX1__Course__c
   table: TREX1__Course__c
@@ -50,4 +270,71 @@ Insert TREX1__Course__c:
       table:
       - TREX1__Program__c
       key_field: TREX1__Program__c
+  select_options: {}
+Insert TREX1__Course_Session__c:
+  sf_object: TREX1__Course_Session__c
+  table: TREX1__Course_Session__c
+  fields:
+  - Name
+  - TREX1__Allow_Group_Registration__c
+  - TREX1__Available_Online_From__c
+  - TREX1__Available_Online_To__c
+  - TREX1__Available_Online__c
+  - TREX1__Available__c
+  - TREX1__Code__c
+  - TREX1__Description__c
+  - TREX1__Expiry_Extension_Seconds__c
+  - TREX1__External_Alert__c
+  - TREX1__Free_Membership_End_Date__c
+  - TREX1__Free_Membership_Start_Date__c
+  - TREX1__Initial_Seconds_To_Expiry__c
+  - TREX1__Internal_Alert__c
+  - TREX1__Legacy_Id__c
+  - TREX1__Max_Expiry_Seconds__c
+  - TREX1__Minimum_Entitlements__c
+  - TREX1__Num_Classroom_Assignments__c
+  - TREX1__Num_Option_Entitlements__c
+  - TREX1__Required_of_Employees_10_Registrants__c
+  - TREX1__Reservation_Expiry_Seconds__c
+  - TREX1__Rich_Description__c
+  - TREX1__Status__c
+  - TREX1__Supervisor_Email__c
+  - TREX1__Supervisor_Name__c
+  - TREX1__Supervisor_Phone__c
+  - TREX1__Transfer_Fee__c
+  - TREX1__Transfer_in_within_Program__c
+  - TREX1__Transfer_out_within_Program__c
+  - TREX1__Waitlist_Message__c
+  - TREX1__Withdrawal_Days__c
+  - TREX1__Withdrawal_Fee__c
+  - TREX1__Withdrawal_Policy__c
+  lookups:
+    TREX1__Course__c:
+      table:
+      - TREX1__Course__c
+      key_field: TREX1__Course__c
+    TREX1__Session__c:
+      table:
+      - TREX1__Session__c
+      key_field: TREX1__Session__c
+    TREX1__Product__c:
+      table:
+      - TREX1__Product__c
+      key_field: TREX1__Product__c
+    TREX1__Free_Membership_Type__c:
+      table:
+      - TREX1__Membership_Type__c
+      key_field: TREX1__Free_Membership_Type__c
+    TREX1__Supervisor__c:
+      table:
+      - TREX1__Staff__c
+      key_field: TREX1__Supervisor__c
+    TREX1__Transfer_GL_Account__c:
+      table:
+      - TREX1__GL_Account__c
+      key_field: TREX1__Transfer_GL_Account__c
+    TREX1__Withdrawal_GL_Account__c:
+      table:
+      - TREX1__GL_Account__c
+      key_field: TREX1__Withdrawal_GL_Account__c
   select_options: {}
