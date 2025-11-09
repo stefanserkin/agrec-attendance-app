@@ -1,4 +1,8 @@
 extract:
+  TREX1__App_Config__c:
+    fields:
+      - FIELDS(ALL)
+
   TREX1__GL_Account__c:
     fields:
       - FIELDS(ALL)
@@ -98,3 +102,49 @@ extract:
       - TREX1__Booking_Series__c
       - TREX1__Facility__c
       - TREX1__Course_Option__c
+
+  Account:
+    fields:
+      - FIELDS(ALL)
+
+  Contact:
+    fields:
+      - FIELDS(ALL)
+      - AccountId
+
+  TREX1__Transaction__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Contact__c
+      - TREX1__Account__c
+
+  TREX1__Registration__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Transaction__c
+      - TREX1__Contact__c
+      - TREX1__Account__c
+
+  TREX1__Course_Option_Enrollment__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__coe_Course_Option__c
+      - TREX1__coe_Registration__c
+      - TREX1__Registration__c
+      - TREX1__Course_Option__c
+      - TREX1__Contact__c
+
+  TREX1__Transaction_Line_Item__c:
+    fields:
+      - FIELDS(ALL)
+      - TREX1__Transaction__c
+      - TREX1__Contact__c
+      - TREX1__Account__c
+      - TREX1__Transaction_Contact__c
+      - TREX1__Parent_Line_Item__c
+      - TREX1__tli_Price_Level__c
+      - TREX1__tli_Product__c
+      - TREX1__tli_Global_Billing_Group__c
+      - TREX1__Registration__c
+      - TREX1__Course_Option_Enrollment__c
+      - TREX1__Course_Session__c
